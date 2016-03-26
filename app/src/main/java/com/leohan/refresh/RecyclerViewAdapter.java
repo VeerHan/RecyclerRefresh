@@ -17,6 +17,12 @@ public class RecyclerViewAdapter extends Adapter<ViewHolder> {
     private Context context;
     private List data;
 
+
+    public RecyclerViewAdapter(Context context, List data) {
+        this.context = context;
+        this.data = data;
+    }
+
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
 
@@ -41,11 +47,6 @@ public class RecyclerViewAdapter extends Adapter<ViewHolder> {
         } else {
             return TYPE_ITEM;
         }
-    }
-
-    public RecyclerViewAdapter(Context context, List data) {
-        this.context = context;
-        this.data = data;
     }
 
     @Override
