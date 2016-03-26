@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,8 +19,6 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
- * 重要公告
- *
  * @author Leo
  */
 public class MainActivity extends AppCompatActivity {
@@ -140,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 getData();
             }
-        }, 100);
+        }, 1500);
 
     }
 
