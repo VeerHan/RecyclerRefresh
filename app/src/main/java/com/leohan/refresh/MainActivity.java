@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
-    @InjectView(R.id.tv_tile)
-    TextView tvTile;
     @InjectView(R.id.recyclerView)
     RecyclerView recyclerView;
     @InjectView(R.id.SwipeRefreshLayout)
@@ -52,9 +49,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initView() {
-        tvTile.setText(R.string.notice);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setTitle(R.string.notice);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         data.clear();
                         getData();
                     }
-                }, 3000);
+                }, 2000);
             }
         });
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 getData();
-                                Toast.makeText(MainActivity.this, "load more completed", Toast.LENGTH_SHORT).show();
+                                Log.d("test", "load more completed");
                                 isLoading = false;
                             }
                         }, 1000);
@@ -149,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 获取类别数据
+     * 获取测试数据
      */
     private void getData() {
         for (int i = 0; i < 6; i++) {

@@ -23,7 +23,7 @@
             style="@style/NormalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[2015-12-11 12:00]" />
+            android:text="2015-12-11 12:00" />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -36,13 +36,13 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                style="@style/SmallTextView"
+                style="@style/SmallGreyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="视线0出口开通好转，出口开通0出口开通0出口开通0出口开通0出口开通"
-                android:textColor="@color/red" />
+                android:text="视线好转,0729出口开通,0621进口开通。视线好转,0729出口开通,0621进口开通。"
+                />
 
         </android.support.v7.widget.CardView>
     </LinearLayout>
