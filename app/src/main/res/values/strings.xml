@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RefreshDemo</string>
+    <string name="loading">加载中…</string>
+    <string name="notice">重要公告</string>
 </resources>

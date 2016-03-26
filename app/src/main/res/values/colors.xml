@@ -3,4 +3,18 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="blueText">#1485C6</color>
+    <color name="blueIndexStatus">#67A5EF</color>
+    <color name="blueStatus">#1680E2</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark">#424242</color>
+    <color name="red">#FFD4212A</color>
+    <color name="grey">#8C8C8C</color>
+    <color name="line">#EEEEEE</color>
+    <color name="background">#F9F9FA</color>
+
+    <color name="greyBackground">#FFCFCFCF</color>
+
+
 </resources>
