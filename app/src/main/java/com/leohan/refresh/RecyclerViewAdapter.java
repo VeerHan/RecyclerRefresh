@@ -10,23 +10,23 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class NoticeAdapter extends Adapter<ViewHolder> {
+public class RecyclerViewAdapter extends Adapter<ViewHolder> {
 
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_FOOTER = 1;
     private Context context;
     private List data;
 
-    public interface OnItemClickLitener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position);
 
         void onItemLongClick(View view, int position);
     }
 
-    private OnItemClickLitener onItemClickLitener;
+    private OnItemClickListener onItemClickListener;
 
-    public void setOnItemClickLitener(OnItemClickLitener onItemClickLitener) {
-        this.onItemClickLitener = onItemClickLitener;
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class NoticeAdapter extends Adapter<ViewHolder> {
         }
     }
 
-    public NoticeAdapter(Context context, List data) {
+    public RecyclerViewAdapter(Context context, List data) {
         this.context = context;
         this.data = data;
     }
@@ -51,7 +51,7 @@ public class NoticeAdapter extends Adapter<ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_ITEM) {
-            View view = LayoutInflater.from(context).inflate(R.layout.item_notice, parent,
+            View view = LayoutInflater.from(context).inflate(R.layout.item_base, parent,
                     false);
             return new ItemViewHolder(view);
         } else if (viewType == TYPE_FOOTER) {
@@ -59,7 +59,6 @@ public class NoticeAdapter extends Adapter<ViewHolder> {
                     false);
             return new FootViewHolder(view);
         }
-
         return null;
     }
 
@@ -68,20 +67,20 @@ public class NoticeAdapter extends Adapter<ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
             //holder.tv.setText(data.get(position));
-            if (onItemClickLitener != null) {
+            if (onItemClickListener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int pos = holder.getLayoutPosition();
-                        onItemClickLitener.onItemClick(holder.itemView, pos);
+                        int position = holder.getLayoutPosition();
+                        onItemClickListener.onItemClick(holder.itemView, position);
                     }
                 });
 
                 holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
-                        int pos = holder.getLayoutPosition();
-                        onItemClickLitener.onItemLongClick(holder.itemView, pos);
+                        int position = holder.getLayoutPosition();
+                        onItemClickListener.onItemLongClick(holder.itemView, position);
                         return false;
                     }
                 });

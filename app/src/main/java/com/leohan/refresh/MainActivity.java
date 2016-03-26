@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean isLoading;
     private List<Map<String, Object>> data = new ArrayList<>();
-    private NoticeAdapter adapter = new NoticeAdapter(this, data);
+    private RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, data);
     private Handler handler = new Handler();
 
     @Override
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //添加点击事件
-        adapter.setOnItemClickLitener(new NoticeAdapter.OnItemClickLitener() {
+        adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Log.d("test", "item position = " + position);
