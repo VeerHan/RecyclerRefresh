@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/margin_10"
     android:layout_marginRight="@dimen/margin_10"
-    android:foreground="?android:attr/selectableItemBackgroundBorderless"
     android:layout_marginTop="6dp"
     android:orientation="vertical"
     app:cardBackgroundColor="@color/line"
